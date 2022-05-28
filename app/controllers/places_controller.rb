@@ -14,10 +14,15 @@ class PlacesController < ApplicationController
   end
 
   def create
+  if @current_user
     @place = Place.new
     @place["name"] = params["place"]["name"]
     @place.save
-    redirect_to "/places"
+  else
+    flash["notice"] = "You must be logged in."
   end
+  redirect_to "/places"
+end
 
 end
+
