@@ -14,10 +14,12 @@ class PostsController < ApplicationController
     @post["place_id"] = params["post"]["place_id"]
     @post["user_id"] = @current_user["id"]
     @post.save
+    redirect_to "/places/#{@post["place_id"]}"
   else
     flash["notice"] = "You must be logged in."
+    redirect_to "/places/"
   end
-    redirect_to "/places/#{@post["place_id"]}"
-  end
+end
+    
 
 end
