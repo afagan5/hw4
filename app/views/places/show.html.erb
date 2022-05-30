@@ -2,8 +2,6 @@
 
 <h2>My Posts</h2>
 
-
-
 <div class="row">
 <p>
   <a class="btn btn-primary" href="/posts/new?place_id=<%= @place["id"] %>" role="button">New Post</a>
@@ -30,6 +28,6 @@
 </div>
 
 <% else %>
-<% flash["notice"] = "Sorry you need to be logged in." %>
+<% flash["notice"] = "Sorry, you need to be logged in to view and create posts." %>
 
 <% end %>

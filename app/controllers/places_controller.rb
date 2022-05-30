@@ -19,11 +19,12 @@ class PlacesController < ApplicationController
     @place = Place.new
     @place["name"] = params["place"]["name"]
     @place.save
+    redirect_to "/places"
   else
-    flash["notice"] = "You must be logged in."
+    flash["notice"] = "Sorry, you need to be logged in to create a new place."
+    redirect_to "/places"
   end
-  redirect_to "/places"
 end
 
-end
+  end
 

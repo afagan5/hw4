@@ -16,7 +16,7 @@ class PostsController < ApplicationController
     @post.save
     redirect_to "/places/#{@post["place_id"]}"
   else
-    flash["notice"] = "You must be logged in."
+    flash["notice"] = "Sorry, you need to be logged in to create a new post."
     redirect_to "/places/"
   end
 end
