@@ -11,11 +11,11 @@ class SessionsController < ApplicationController
         flash["notice"] = "Welcome, #{@user["username"]}."
         redirect_to "/places"
       else
-        flash["notice"] = "Username and password combination not found. Please try again or create a new profile by clicking Sign Up."
+        flash["notice"] = "Username and password combination not found. Please try again or create a new profile by clicking Signup."
         redirect_to "/login"
       end
     else
-      flash["notice"] = "Username and password combination not found. Please try again or create a new profile by clicking Sign Up."
+      flash["notice"] = "Username and password combination not found. Please try again or create a new profile by clicking Signup."
       redirect_to "/login"
     end
   end
