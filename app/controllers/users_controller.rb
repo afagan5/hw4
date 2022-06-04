@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @user["email"] = params["user"]["email"]
     @user["password"] = BCrypt::Password.create(params["user"]["password"])
     @user.save
-    flash["notice"] = "User profile successfully created! Please login to start using the travel journal."
+    flash["notice"] = "User profile successfully created! Please login to start using your travel journal."
     redirect_to "/places"
 end
   end
